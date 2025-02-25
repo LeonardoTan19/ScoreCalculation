@@ -38,6 +38,6 @@ void inputEvent(const EventList events);
 void inputResult(const EventList events);
 // 修改比赛结果
 void modifyResult(const EventList events);
-// 搜索项目结果（0为根据项目id，1为根据学校id）
-void searchEventResult(const int byWhat, const int id, const EventList events);
+// 输出比赛结果
+void printEventResult(const EventList events);
 #endif

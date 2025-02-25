@@ -45,7 +45,7 @@ typedef struct {
     char *back;
 } Func;
 
-// 彩色打印输出
+// 彩色打印函数，接受格式化字符串及可变参数
 int print(const Func func, const char *__format, ...);
 // 设置输出格式
 Func getFunc(char *control, char *front, char *back);

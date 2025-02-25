@@ -3,10 +3,11 @@
 
 typedef struct
 {
-    char *name;
-    MenuPointer menu;
+    char *name;       // 菜单选项名称
+    MenuPointer menu; // 对应的菜单函数指针
 } Option;
 
+// 定义主菜单的各个选项
 Option options[] = {
     {"信息查询菜单", queryMenu},
     {"信息录入菜单", inputMenu},
@@ -14,6 +15,7 @@ Option options[] = {
     {"信息保存", saveMenu},
     {"退出", exitMenu}};
 
+// listFunc 用于指定字体样式等参数
 void printMainMenuOptions(Func listFunc)
 {
     print(getFunc(C_BOLD, F_YELLOW, B_DEFAULT), "■功能列表■\n");
@@ -56,10 +58,15 @@ void queryMenu()
             printEvents(events);
             break;
         case 2:
-            print(getFunc(C_DEFAULT,F_YELLOW,B_DEFAULT),"1.按编号排序\n2.按男子团体得分排序\n3.按女子团体得分排序\n4.按总得分排序\n");
+            print(getFunc(C_DEFAULT, F_YELLOW, B_DEFAULT),
+                  "1.按编号排序\n2.按男子团体得分排序\n3.按女子团体得分排序\n4.按总得分排序\n");
             {
                 int sortMethod = getValidNumInput("请选择排序方式：", 1, 5);
-                int(*cmp[])(const School *, const School *) = {school_CmpById, school_CmpByMaleScore, school_CmpByFemaleScore, school_CmpByTotalScore};
+                int (*cmp[])(const School *, const School *) = {
+                    school_CmpById,
+                    school_CmpByMaleScore,
+                    school_CmpByFemaleScore,
+                    school_CmpByTotalScore};
                 SchoolList temp = SchoolList_Copy(schools);
                 SchoolList_Sort(temp, cmp[sortMethod - 1]);
                 printSchools(temp);
@@ -67,26 +74,7 @@ void queryMenu()
             }
             break;
         case 3:
-            int choice = getValidNumInput("请输入查询方式（1.按项目查询 2.按学校查询）：", 1, 2), id;
-            if (choice == 1)
-            {
-                if (!printEvents(events))
-                {
-                    print(ERROR_FUNC, "无项目信息\n");
-                    break;
-                }
-                id = getValidNumInput("请输入查询的项目ID：", 1, events->size);
-            }
-            else
-            {
-                if (!printSchools(schools))
-                {
-                    print(ERROR_FUNC, "无学校信息\n");
-                    break;
-                }
-                id = getValidNumInput("请输入查询的学校ID：", 1, schools->size);
-            }
-            searchEventResult(choice, id, events);
+            printEventResult(events);
             break;
         case 4:
             return;
@@ -161,6 +149,7 @@ void modifyMenu()
             modifySchool(schools);
             break;
         case 3:
+            // 修改比赛结果并重新计算得分
             modifyResult(events);
             calculateScore(events, schools);
             break;
@@ -172,10 +161,11 @@ void modifyMenu()
 
 void saveMenu()
 {
+    // 调用保存函数，如果返回SUCCESS则表示保存成功
     if (SUCCESS == fullSave(events, schools))
     {
         print(SUCCESS_FUNC, "数据保存成功\n");
-        isDataChange = false;
+        isDataChange = false; // 更新数据状态
     }
     else
         print(ERROR_FUNC, "数据保存失败！\n");
@@ -184,6 +174,8 @@ void saveMenu()
 void exitMenu()
 {
     print(SUCCESS_FUNC, "欢迎使用本系统，再见！\n");
+
+    // 如果数据有改动，则询问用户是否保存
     if (isDataChange)
     {
         int choice = getValidNumInput("当前有未保存的数据，是否保存？(0.不保存 1.保存 2.取消)：", 0, 2);
@@ -192,5 +184,5 @@ void exitMenu()
         else if (choice == 2)
             return;
     }
-    exit(0);
+    exit(0); // 退出程序
 }

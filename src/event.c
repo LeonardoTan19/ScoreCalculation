@@ -2,17 +2,22 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "store.h"
+
 int nextEventId = 1;
+
 int event_CmpById(const Event *a, const Event *b)
 {
     return a->id - b->id;
 }
+
 char *eventInfo(const Event event, char end)
 {
     char *str = (char *)calloc(MAX_LENTH_NAME + 70, sizeof(char));
-    snprintf(str, MAX_LENTH_NAME + 70, "ID：%-4d %s 比赛类型：%10s 计分方式：%-8s%c", event.id, event.name, getComType(event.comType), getScoreType(event.scoreType), end);
+    snprintf(str, MAX_LENTH_NAME + 70, "ID：%-4d %s 比赛类型：%10s 计分方式：%-8s%c",
+             event.id, event.name, getComType(event.comType), getScoreType(event.scoreType), end);
     return str;
 }
+
 char *eventInfo_Short(const Event event, char end)
 {
     char *str = (char *)calloc(MAX_LENTH_NAME + 50, sizeof(char));
@@ -23,10 +28,13 @@ char *eventInfo_Short(const Event event, char end)
 int resultToScore(const Event event, const Result result)
 {
     if (topFive == event.scoreType)
+        // 若排名大于第五名，得分为0，否则从ScoreFive表中获取分数
         return getResultRank(event.results, result) > 4 ? 0 : ScoreFive[getResultRank(event.results, result)];
     else
+        // 若排名大于第三名，得分为0，否则从ScoreThree表中获取分数
         return getResultRank(event.results, result) > 2 ? 0 : ScoreThree[getResultRank(event.results, result)];
 }
+
 Event createEvent(char *name, ComType comType, ScoreType scoreType)
 {
     Event event;
@@ -38,6 +46,7 @@ Event createEvent(char *name, ComType comType, ScoreType scoreType)
     event.results = ResultList_Init();
     return event;
 }
+
 int printEvents(const EventList events)
 {
     if (events && events->head)
@@ -47,7 +56,12 @@ int printEvents(const EventList events)
         print(getFunc(C_FAINT, F_BLUE, B_DEFAULT), "---- --------- ---------- ----------\n");
         for (EventNode *eventNode = events->head; eventNode; eventNode = eventNode->next)
         {
-            printf("%-4d %s %10s %-8s\n", eventNode->data.id, eventInfo_Short(eventNode->data, '\0'), getComType(eventNode->data.comType), getScoreType(eventNode->data.scoreType));
+            // 简要显示每个项目的信息
+            printf("%-4d %s %10s %-8s\n",
+                   eventNode->data.id,
+                   eventInfo_Short(eventNode->data, '\0'),
+                   getComType(eventNode->data.comType),
+                   getScoreType(eventNode->data.scoreType));
         }
     }
     else
@@ -56,6 +70,7 @@ int printEvents(const EventList events)
     }
     return events->size;
 }
+
 void modifyEvent(const EventList events)
 {
     int id;
@@ -72,6 +87,7 @@ void modifyEvent(const EventList events)
         name[strlen(name) - 1] = '\0';
         if (strcmp(name, "#") == 0)
         {
+            // 将该项目删除后，重置其他项目的ID
             EventList_Delete(events, id - 1);
             print(PROMPT_FUNC, "项目删除成功！\n");
             isDataChange = true;
@@ -83,6 +99,7 @@ void modifyEvent(const EventList events)
         }
         else
         {
+            // 修改指定项目的类型、计分方式并刷新ID
             const char *comTypePrompts = "请输入项目类型（1. 男子径赛 2. 男子田赛 3. 女子径赛 4. 女子田赛）：";
             const char *scoreTypePrompts = "请输入计分方式（1. 前三名 2. 前五名）：";
             ComType comType = getValidNumInput(comTypePrompts, 1, 4);
@@ -105,6 +122,7 @@ void modifyEvent(const EventList events)
         print(ERROR_FUNC, "没有找到该项目！\n");
     }
 }
+
 void inputEvent(const EventList events)
 {
     int count;
@@ -121,11 +139,13 @@ void inputEvent(const EventList events)
         const char *scoreTypePrompts = "请输入计分方式（1. 前三名 2. 前五名）：";
         ComType comType = getValidNumInput(comTypePrompts, 1, 4);
         ScoreType scoreType = getValidNumInput(scoreTypePrompts, 1, 2);
+        // 将新建的赛事插入到链表尾部
         EventList_Insert_Tail(events, createEvent(name, comType, scoreType));
         print(PROMPT_FUNC, "项目录入成功！\n");
         isDataChange = true;
     }
 }
+
 void inputResult(const EventList events)
 {
     int count;
@@ -145,6 +165,7 @@ void inputResult(const EventList events)
             SchoolNode *schoolNode = SchoolList_Get(schools, schoolId - 1);
             if (schoolNode)
             {
+                // 不断提示用户输入成绩，直到获取正确格式的成绩
                 while (1)
                 {
                     char gradeString[MAX_LENTH_RESULT];
@@ -176,9 +197,12 @@ void inputResult(const EventList events)
             print(ERROR_FUNC, "没有找到该项目！\n");
         }
 
-        ResultList_Sort(eventNode->data.results, eventNode->data.comType % 2 ? result_CmpByGrade_Track : result_CmpByGrade_Field);
+        // 对录入的成绩进行排序
+        ResultList_Sort(eventNode->data.results,
+                        eventNode->data.comType % 2 ? result_CmpByGrade_Track : result_CmpByGrade_Field);
     }
 }
+
 void modifyResult(const EventList events)
 {
     int id;
@@ -200,7 +224,12 @@ void modifyResult(const EventList events)
         {
             if (resultNode)
             {
-                printf("%-4d %-*s %s（%d）\n", i + 1, MAX_LENTH_NAME - 1, resultNode->data.school.name, resultToString(eventNode->data.comType, resultNode->data, '\0'), resultToScore(eventNode->data, resultNode->data));
+                printf("%-4d %-*s %s（%d）\n",
+                       i + 1,
+                       MAX_LENTH_NAME - 1,
+                       resultNode->data.school.name,
+                       resultToString(eventNode->data.comType, resultNode->data, '\0'),
+                       resultToScore(eventNode->data, resultNode->data));
                 resultNode = resultNode->next;
             }
             else
@@ -216,16 +245,19 @@ void modifyResult(const EventList events)
         ResultNode *resultNodeToModify = ResultList_Get(eventNode->data.results, rank - 1);
         if (resultNodeToModify)
         {
+            // 提示用户输入新成绩或删除成绩
             while (1)
             {
                 char gradeString[MAX_LENTH_RESULT];
-                print(PROMPT_FUNC, eventNode->data.comType % 2 ? "请输入时间（-h--'--''--[可不输入大单位]）（#以删除）：" : "请输入距离（-.--m）：");
+                print(PROMPT_FUNC,
+                      eventNode->data.comType % 2 ? "请输入时间（-h--'--''--[可不输入大单位]）（#以删除）：" : "请输入距离（-.--m）：");
                 fgets(gradeString, MAX_LENTH_RESULT - 1, stdin);
                 gradeString[strlen(gradeString) - 1] = '\0';
                 if (strcmp(gradeString, "#") == 0)
                 {
                     ResultList_Delete(eventNode->data.results, rank - 1);
-                    ResultList_Sort(eventNode->data.results, eventNode->data.comType % 2 ? result_CmpByGrade_Track : result_CmpByGrade_Field);
+                    ResultList_Sort(eventNode->data.results,
+                                    eventNode->data.comType % 2 ? result_CmpByGrade_Track : result_CmpByGrade_Field);
                     print(PROMPT_FUNC, "成绩删除成功！\n");
                     isDataChange = true;
                     break;
@@ -236,7 +268,8 @@ void modifyResult(const EventList events)
                     if (grade != -1)
                     {
                         resultNodeToModify->data.grade = grade;
-                        ResultList_Sort(eventNode->data.results, eventNode->data.comType % 2 ? result_CmpByGrade_Track : result_CmpByGrade_Field);
+                        ResultList_Sort(eventNode->data.results,
+                                        eventNode->data.comType % 2 ? result_CmpByGrade_Track : result_CmpByGrade_Field);
                         print(PROMPT_FUNC, "成绩修改成功！\n");
                         isDataChange = true;
                         break;
@@ -250,26 +283,70 @@ void modifyResult(const EventList events)
         }
     }
 }
-void searchEventResult(const int byWhat, const int id, const EventList events)
+
+void printEventResult(const EventList events)
 {
+    int byWhat = getValidNumInput("请输入查询方式（1.按项目查询 2.按学校查询）：", 1, 2), id;
+    if (byWhat == 1)
+    {
+        if (!printEvents(events))
+        {
+            print(ERROR_FUNC, "无项目信息\n");
+            return;
+        }
+        id = getValidNumInput("请输入查询的项目ID：", 1, events->size);
+    }
+    else
+    {
+        if (!printSchools(schools))
+        {
+            print(ERROR_FUNC, "无学校信息\n");
+            return;
+        }
+        id = getValidNumInput("请输入查询的学校ID：", 1, schools->size);
+    }
     if (byWhat == 1)
     {
         EventNode *eventNode = EventList_Get(events, id - 1);
         if (eventNode)
         {
             ResultNode *resultNode = eventNode->data.results->head;
-            print(getFunc(C_BOLD, F_BLUE, B_DEFAULT), "学校名称 成绩（得分）\n");
+            print(getFunc(C_BOLD, F_YELLOW, B_DEFAULT), "获奖名单\n");
+            print(getFunc(C_FAINT, F_BLUE, B_DEFAULT), "学校名称 成绩（得分）\n");
             print(getFunc(C_FAINT, F_BLUE, B_DEFAULT), "-------- --------\n");
+            // 输出前三或前五的成绩
             for (int i = 0; i < MIN(scoreTypeToNum(eventNode->data.comType), eventNode->data.results->size); i++)
             {
                 if (resultNode)
                 {
-                    printf("%-*s %s（%d）\n", MAX_LENTH_NAME - 1, resultNode->data.school.name, resultToString(eventNode->data.comType, resultNode->data, '\0'), resultToScore(eventNode->data, resultNode->data));
+                    printf("%-*s %s（%d）\n",
+                           MAX_LENTH_NAME - 1,
+                           resultNode->data.school.name,
+                           resultToString(eventNode->data.comType, resultNode->data, '\0'),
+                           resultToScore(eventNode->data, resultNode->data));
                     resultNode = resultNode->next;
                 }
                 else
                 {
                     print(ERROR_FUNC, "未找到相关的成绩！\n");
+                    return;
+                }
+            }
+            // 是否继续输出剩余成绩
+            if (eventNode->data.results->size > scoreTypeToNum(eventNode->data.comType))
+            {
+                if (getValidNumInput("输出剩余的成绩（1.是 0.否）：", 0, 1))
+                {
+                    ResultNode *resultNode = ResultList_Get(eventNode->data.results, scoreTypeToNum(eventNode->data.comType));
+                    while (resultNode)
+                    {
+                        printf("%-*s %s（%d）\n",
+                               MAX_LENTH_NAME - 1,
+                               resultNode->data.school.name,
+                               resultToString(eventNode->data.comType, resultNode->data, '\0'),
+                               resultToScore(eventNode->data, resultNode->data));
+                        resultNode = resultNode->next;
+                    }
                 }
             }
         }
@@ -282,13 +359,18 @@ void searchEventResult(const int byWhat, const int id, const EventList events)
         {
             print(getFunc(C_BOLD, F_BLUE, B_DEFAULT), "项目名称 成绩（得分）\n");
             print(getFunc(C_FAINT, F_BLUE, B_DEFAULT), "-------- --------\n");
+            // 遍历所有项目，查找当前学校的成绩
             for (EventNode *eventNode = events->head; eventNode; eventNode = eventNode->next)
             {
                 for (ResultNode *resultNode = eventNode->data.results->head; resultNode; resultNode = resultNode->next)
                 {
                     if (!school_CmpById(&(resultNode->data.school), &(schoolNode->data)))
                     {
-                        printf("%-*s %s（%d）\n", MAX_LENTH_NAME - 1, eventNode->data.name, resultToString(eventNode->data.comType, resultNode->data, '\0'), resultToScore(eventNode->data, resultNode->data));
+                        printf("%-*s %s（%d）\n",
+                               MAX_LENTH_NAME - 1,
+                               eventNode->data.name,
+                               resultToString(eventNode->data.comType, resultNode->data, '\0'),
+                               resultToScore(eventNode->data, resultNode->data));
                     }
                 }
             }
