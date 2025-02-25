@@ -194,13 +194,13 @@ void modifyResult(const EventList events)
     if (eventNode)
     {
         print(getFunc(C_BOLD, F_BLUE, B_DEFAULT), "序号 学校名称 成绩（得分）\n");
-        print(getFunc(C_FAINT, F_BLUE, B_DEFAULT), "--- ----------- --------\n");
+        print(getFunc(C_FAINT, F_BLUE, B_DEFAULT), "---- ----------- --------\n");
         ResultNode *resultNode = eventNode->data.results->head;
-        for (int i = 0; i < MIN(scoreTypeToNum(eventNode->data.comType), eventNode->data.results->size); i++)
+        for (int i = 0; i < eventNode->data.results->size; i++)
         {
             if (resultNode)
             {
-                printf("%d %-*s %s（%d）\n", i + 1, MAX_LENTH_NAME - 1, resultNode->data.school.name, resultToString(eventNode->data.comType, resultNode->data, '\0'), resultToScore(eventNode->data, resultNode->data));
+                printf("%-4d %-*s %s（%d）\n", i + 1, MAX_LENTH_NAME - 1, resultNode->data.school.name, resultToString(eventNode->data.comType, resultNode->data, '\0'), resultToScore(eventNode->data, resultNode->data));
                 resultNode = resultNode->next;
             }
             else

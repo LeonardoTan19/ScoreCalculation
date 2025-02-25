@@ -1,49 +1,49 @@
 [
 {
   "directory": "E:/MyCode/ScoreCalculation/build",
-  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/Scorecalculation.dir/includes_C.rsp  -Wall -finput-charset=UTF-8 -g -std=gnu11 -o CMakeFiles\\Scorecalculation.dir\\main.c.obj -c E:\\MyCode\\ScoreCalculation\\main.c",
+  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/Scorecalculation.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\Scorecalculation.dir\\main.c.obj -c E:\\MyCode\\ScoreCalculation\\main.c",
   "file": "E:/MyCode/ScoreCalculation/main.c",
   "output": "CMakeFiles/Scorecalculation.dir/main.c.obj"
 },
 {
   "directory": "E:/MyCode/ScoreCalculation/build/src",
-  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/ScoreItems.dir/includes_C.rsp  -Wall -finput-charset=UTF-8 -g -std=gnu11 -o CMakeFiles\\ScoreItems.dir\\event.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\event.c",
+  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/ScoreItems.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\ScoreItems.dir\\event.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\event.c",
   "file": "E:/MyCode/ScoreCalculation/src/event.c",
   "output": "src/CMakeFiles/ScoreItems.dir/event.c.obj"
 },
 {
   "directory": "E:/MyCode/ScoreCalculation/build/src",
-  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/ScoreItems.dir/includes_C.rsp  -Wall -finput-charset=UTF-8 -g -std=gnu11 -o CMakeFiles\\ScoreItems.dir\\school.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\school.c",
+  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/ScoreItems.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\ScoreItems.dir\\school.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\school.c",
   "file": "E:/MyCode/ScoreCalculation/src/school.c",
   "output": "src/CMakeFiles/ScoreItems.dir/school.c.obj"
 },
 {
   "directory": "E:/MyCode/ScoreCalculation/build/src",
-  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/ScoreItems.dir/includes_C.rsp  -Wall -finput-charset=UTF-8 -g -std=gnu11 -o CMakeFiles\\ScoreItems.dir\\result.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\result.c",
+  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/ScoreItems.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\ScoreItems.dir\\result.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\result.c",
   "file": "E:/MyCode/ScoreCalculation/src/result.c",
   "output": "src/CMakeFiles/ScoreItems.dir/result.c.obj"
 },
 {
   "directory": "E:/MyCode/ScoreCalculation/build/src",
-  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/ScoreItems.dir/includes_C.rsp  -Wall -finput-charset=UTF-8 -g -std=gnu11 -o CMakeFiles\\ScoreItems.dir\\prehead.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\prehead.c",
+  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/ScoreItems.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\ScoreItems.dir\\prehead.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\prehead.c",
   "file": "E:/MyCode/ScoreCalculation/src/prehead.c",
   "output": "src/CMakeFiles/ScoreItems.dir/prehead.c.obj"
 },
 {
   "directory": "E:/MyCode/ScoreCalculation/build/src",
-  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/Print.dir/includes_C.rsp  -Wall -finput-charset=UTF-8 -g -std=gnu11 -o CMakeFiles\\Print.dir\\print.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\print.c",
+  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/Print.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\Print.dir\\print.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\print.c",
   "file": "E:/MyCode/ScoreCalculation/src/print.c",
   "output": "src/CMakeFiles/Print.dir/print.c.obj"
 },
 {
   "directory": "E:/MyCode/ScoreCalculation/build/src",
-  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/Store.dir/includes_C.rsp  -Wall -finput-charset=UTF-8 -g -std=gnu11 -o CMakeFiles\\Store.dir\\store.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\store.c",
+  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/Store.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\Store.dir\\store.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\store.c",
   "file": "E:/MyCode/ScoreCalculation/src/store.c",
   "output": "src/CMakeFiles/Store.dir/store.c.obj"
 },
 {
   "directory": "E:/MyCode/ScoreCalculation/build/src",
-  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/Menu.dir/includes_C.rsp  -Wall -finput-charset=UTF-8 -g -std=gnu11 -o CMakeFiles\\Menu.dir\\menu.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\menu.c",
+  "command": "E:\\mingw64\\bin\\gcc.exe  @CMakeFiles/Menu.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles\\Menu.dir\\menu.c.obj -c E:\\MyCode\\ScoreCalculation\\src\\menu.c",
   "file": "E:/MyCode/ScoreCalculation/src/menu.c",
   "output": "src/CMakeFiles/Menu.dir/menu.c.obj"
 }

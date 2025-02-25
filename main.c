@@ -8,6 +8,7 @@ SchoolList schools = NULL;
 
 int main()
 {
+    system("chcp 65001&cls");
     events = EventList_Init();
     schools = SchoolList_Init();
     fullLoad(events, schools);
