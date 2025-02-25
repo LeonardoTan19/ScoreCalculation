@@ -1,0 +1,115 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src",
+					"jsonFile" : "directory-src-Debug-c94b7c2814d5a21df52c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "Scorecalculation",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "Menu::@145eef247bfb46b6828c",
+					"jsonFile" : "target-Menu-Debug-4da31593ddafd9ce9a40.json",
+					"name" : "Menu",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Print::@145eef247bfb46b6828c",
+					"jsonFile" : "target-Print-Debug-b84011b6efd0711f7bd6.json",
+					"name" : "Print",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ScoreItems::@145eef247bfb46b6828c",
+					"jsonFile" : "target-ScoreItems-Debug-4ed89846aec45d816950.json",
+					"name" : "ScoreItems",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Scorecalculation::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Scorecalculation-Debug-ff4c03c968fb77af2537.json",
+					"name" : "Scorecalculation",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "Store::@145eef247bfb46b6828c",
+					"jsonFile" : "target-Store-Debug-555bd3f7581192e0de04.json",
+					"name" : "Store",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/MyCode/ScoreCalculation/build",
+		"source" : "E:/MyCode/ScoreCalculation"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

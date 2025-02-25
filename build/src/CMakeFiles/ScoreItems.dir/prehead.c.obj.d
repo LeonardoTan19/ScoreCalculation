@@ -1,0 +1,20 @@
+src/CMakeFiles/ScoreItems.dir/prehead.c.obj: \
+ E:\MyCode\ScoreCalculation\src\prehead.c \
+ E:/MyCode/ScoreCalculation/include/prehead.h \
+ E:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+ E:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+ E:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+ E:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+ E:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+ E:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ E:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+ E:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ E:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+ E:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+ E:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ E:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
+ E:/mingw64/x86_64-w64-mingw32/include/string.h \
+ E:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ E:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ E:/MyCode/ScoreCalculation/build/config.h \
+ E:/MyCode/ScoreCalculation/include/print.h
