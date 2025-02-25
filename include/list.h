@@ -98,29 +98,6 @@
         free(cur);                                                                                   \
         list->size--;                                                                                \
     }                                                                                                \
-    /*遍历链表并对每个结点进行func操作*/                                                             \
-    static inline void Type##List##_ForEach(Type##List list, void (*func)(Type))                     \
-    {                                                                                                \
-        Type##Node *cur = list->head;                                                                \
-        while (cur)                                                                                  \
-        {                                                                                            \
-            func(cur->data);                                                                         \
-            cur = cur->next;                                                                         \
-        }                                                                                            \
-    }                                                                                                \
-    /*交换两个结点*/                                                                                 \
-    static inline void Type##List##_Swap(Type##List list, int index1, int index2)                    \
-    {                                                                                                \
-        Type##Node *cur1 = list->head;                                                               \
-        Type##Node *cur2 = list->head;                                                               \
-        while (index1--)                                                                             \
-            cur1 = cur1->next;                                                                       \
-        while (index2--)                                                                             \
-            cur2 = cur2->next;                                                                       \
-        Type temp = cur1->data;                                                                      \
-        cur1->data = cur2->data;                                                                     \
-        cur2->data = temp;                                                                           \
-    }                                                                                                \
     /*返回链表长度*/                                                                                 \
     static inline int Type##List##_Size(Type##List list)                                             \
     {                                                                                                \
@@ -163,20 +140,6 @@
             }                                                                                        \
             cur = cur->next;                                                                         \
         }                                                                                            \
-    }                                                                                                \
-    /*反转链表*/                                                                                     \
-    static void Type##List##_Reverse(Type##List list)                                                \
-    {                                                                                                \
-        Type##Node *cur = list->head;                                                                \
-        Type##Node *pre = NULL;                                                                      \
-        while (cur)                                                                                  \
-        {                                                                                            \
-            Type##Node *next = cur->next;                                                            \
-            cur->next = pre;                                                                         \
-            pre = cur;                                                                               \
-            cur = next;                                                                              \
-        }                                                                                            \
-        list->head = pre;                                                                            \
     }                                                                                                \
     /*查找返回对应data的序号，cmp为比较函数*/                                                        \
     static int Type##List##_Find(Type##List list, Type data, int (*cmp)(const Type *, const Type *)) \

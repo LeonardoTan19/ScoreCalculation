@@ -49,7 +49,6 @@ int printEvents(const EventList events)
         {
             printf("%-4d %s %10s %-8s\n", eventNode->data.id, eventInfo_Short(eventNode->data, '\0'), getComType(eventNode->data.comType), getScoreType(eventNode->data.scoreType));
         }
-        int id;
     }
     else
     {

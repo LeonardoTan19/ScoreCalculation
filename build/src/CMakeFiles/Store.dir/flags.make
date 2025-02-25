@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = @CMakeFiles/Store.dir/includes_C.rsp
 
-C_FLAGS = -g -std=gnu11
+C_FLAGS =  -Wall -finput-charset=UTF-8 -g -std=gnu11
 

@@ -66,35 +66,35 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "Menu::@145eef247bfb46b6828c",
-					"jsonFile" : "target-Menu-Debug-4da31593ddafd9ce9a40.json",
+					"jsonFile" : "target-Menu-Debug-91a04b9a816be5c029ec.json",
 					"name" : "Menu",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "Print::@145eef247bfb46b6828c",
-					"jsonFile" : "target-Print-Debug-b84011b6efd0711f7bd6.json",
+					"jsonFile" : "target-Print-Debug-4a92f2d050fcca3e4ab7.json",
 					"name" : "Print",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "ScoreItems::@145eef247bfb46b6828c",
-					"jsonFile" : "target-ScoreItems-Debug-4ed89846aec45d816950.json",
+					"jsonFile" : "target-ScoreItems-Debug-752ba13276f20e0b97f9.json",
 					"name" : "ScoreItems",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "Scorecalculation::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Scorecalculation-Debug-ff4c03c968fb77af2537.json",
+					"jsonFile" : "target-Scorecalculation-Debug-4bfb7e718bc965e5a074.json",
 					"name" : "Scorecalculation",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "Store::@145eef247bfb46b6828c",
-					"jsonFile" : "target-Store-Debug-555bd3f7581192e0de04.json",
+					"jsonFile" : "target-Store-Debug-866360140a9ba70e9077.json",
 					"name" : "Store",
 					"projectIndex" : 0
 				}

@@ -13,7 +13,7 @@ int fullSave(EventList events, SchoolList schools)
         return ERROR;
     }
     fprintf(file,"校验数据，修改后数据将不可用：");
-    fprintf(file, "%ld\n",file_stat.st_mtime);
+    fprintf(file, "%lld\n",file_stat.st_mtime);
     fprintf(file, "SCHOOLS:%d\n", schools->size);
     for (SchoolNode *schoolNode = schools->head; schoolNode != NULL; schoolNode = schoolNode->next)
     {

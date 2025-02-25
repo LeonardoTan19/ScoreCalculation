@@ -47,7 +47,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu11"
+					"fragment" : " -Wall -finput-charset=UTF-8 -g -std=gnu11"
 				}
 			],
 			"includes" : 
