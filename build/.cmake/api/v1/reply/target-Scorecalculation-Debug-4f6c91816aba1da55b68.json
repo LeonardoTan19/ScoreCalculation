@@ -93,11 +93,11 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "Store::@145eef247bfb46b6828c"
+			"id" : "Menu::@145eef247bfb46b6828c"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "Menu::@145eef247bfb46b6828c"
+			"id" : "Store::@145eef247bfb46b6828c"
 		}
 	],
 	"id" : "Scorecalculation::@6890427a1f51a3e7e1df",

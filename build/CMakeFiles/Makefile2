@@ -114,8 +114,8 @@ src/clean: src/CMakeFiles/Store.dir/clean
 # All Build rule for target.
 CMakeFiles/Scorecalculation.dir/all: src/CMakeFiles/ScoreItems.dir/all
 CMakeFiles/Scorecalculation.dir/all: src/CMakeFiles/Print.dir/all
-CMakeFiles/Scorecalculation.dir/all: src/CMakeFiles/Store.dir/all
 CMakeFiles/Scorecalculation.dir/all: src/CMakeFiles/Menu.dir/all
+CMakeFiles/Scorecalculation.dir/all: src/CMakeFiles/Store.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scorecalculation.dir\build.make CMakeFiles/Scorecalculation.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Scorecalculation.dir\build.make CMakeFiles/Scorecalculation.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=E:\MyCode\ScoreCalculation\build\CMakeFiles --progress-num=10,11 "Built target Scorecalculation"
