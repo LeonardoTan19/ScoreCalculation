@@ -1,2 +1,0 @@
-E:\mingw64\bin\ar.exe qc ..\lib\libScoreItems.a CMakeFiles/ScoreItems.dir/event.c.obj CMakeFiles/ScoreItems.dir/school.c.obj CMakeFiles/ScoreItems.dir/result.c.obj CMakeFiles/ScoreItems.dir/prehead.c.obj
-E:\mingw64\bin\ranlib.exe ..\lib\libScoreItems.a
