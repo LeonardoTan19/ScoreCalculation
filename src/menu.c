@@ -67,7 +67,7 @@ void queryMenu()
                     school_CmpByMaleScore,
                     school_CmpByFemaleScore,
                     school_CmpByTotalScore};
-                SchoolList temp = SchoolList_Copy(schools);
+                SchoolList temp = SchoolList_Copy_Shallow(schools);
                 SchoolList_Sort(temp, cmp[sortMethod - 1]);
                 printSchools(temp);
                 SchoolList_Destroy(temp);

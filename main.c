@@ -9,7 +9,7 @@ SchoolList schools = NULL;
 int main()
 {
     // 更改控制台编码
-    system("chcp 65001&cls");
+    // system("chcp 65001&cls");
     // 载入数据
     events = EventList_Init();
     schools = SchoolList_Init();
