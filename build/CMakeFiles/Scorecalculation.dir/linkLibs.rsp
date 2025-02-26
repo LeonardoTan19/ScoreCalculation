@@ -1,0 +1,1 @@
+ lib/libScoreItems.a lib/libPrint.a lib/libMenu.a lib/libStore.a lib/libPrint.a lib/libScoreItems.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
