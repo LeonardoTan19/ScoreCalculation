@@ -1,2 +1,0 @@
-E:\mingw64\bin\ar.exe qc ..\lib\libPrint.a CMakeFiles/Print.dir/print.c.obj
-E:\mingw64\bin\ranlib.exe ..\lib\libPrint.a

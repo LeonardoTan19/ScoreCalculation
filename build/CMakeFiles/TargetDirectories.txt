@@ -1,9 +1,0 @@
-E:/MyCode/ScoreCalculation/build/CMakeFiles/Scorecalculation.dir
-E:/MyCode/ScoreCalculation/build/CMakeFiles/edit_cache.dir
-E:/MyCode/ScoreCalculation/build/CMakeFiles/rebuild_cache.dir
-E:/MyCode/ScoreCalculation/build/src/CMakeFiles/ScoreItems.dir
-E:/MyCode/ScoreCalculation/build/src/CMakeFiles/Print.dir
-E:/MyCode/ScoreCalculation/build/src/CMakeFiles/Menu.dir
-E:/MyCode/ScoreCalculation/build/src/CMakeFiles/Store.dir
-E:/MyCode/ScoreCalculation/build/src/CMakeFiles/edit_cache.dir
-E:/MyCode/ScoreCalculation/build/src/CMakeFiles/rebuild_cache.dir

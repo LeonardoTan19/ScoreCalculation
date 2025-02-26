@@ -1,115 +1,74 @@
+# 运动会计分系统
 
-```
-ScoreCaculation
-├─ build
-│  ├─ .cmake
-│  │  └─ api
-│  │     └─ v1
-│  │        ├─ query
-│  │        │  └─ client-vscode
-│  │        │     └─ query.json
-│  │        └─ reply
-│  │           ├─ cache-v2-4ea262a401b5ec7f177f.json
-│  │           ├─ cmakeFiles-v1-413dc6dbe3672266346f.json
-│  │           ├─ codemodel-v2-2a2a97adf6e02eefa94b.json
-│  │           ├─ directory-.-Debug-d0094a50bb2071803777.json
-│  │           ├─ index-2025-02-16T08-00-35-0854.json
-│  │           ├─ target-ScoreCalculation-Debug-f62ec56484ed098eae38.json
-│  │           └─ toolchains-v1-114e6c8c43793cd311be.json
-│  ├─ bin
-│  ├─ CMakeCache.txt
-│  ├─ CMakeFiles
-│  │  ├─ 3.31.5
-│  │  │  ├─ CMakeCCompiler.cmake
-│  │  │  ├─ CMakeDetermineCompilerABI_C.bin
-│  │  │  ├─ CMakeRCCompiler.cmake
-│  │  │  ├─ CMakeSystem.cmake
-│  │  │  └─ CompilerIdC
-│  │  │     ├─ a.exe
-│  │  │     ├─ CMakeCCompilerId.c
-│  │  │     └─ tmp
-│  │  ├─ cmake.check_cache
-│  │  ├─ CMakeConfigureLog.yaml
-│  │  ├─ CMakeDirectoryInformation.cmake
-│  │  ├─ Makefile.cmake
-│  │  ├─ Makefile2
-│  │  ├─ pkgRedirects
-│  │  ├─ Progress
-│  │  │  ├─ 1
-│  │  │  └─ count.txt
-│  │  ├─ progress.marks
-│  │  ├─ ScoreCalculation.dir
-│  │  │  ├─ build.make
-│  │  │  ├─ cmake_clean.cmake
-│  │  │  ├─ compiler_depend.internal
-│  │  │  ├─ compiler_depend.make
-│  │  │  ├─ compiler_depend.ts
-│  │  │  ├─ depend.make
-│  │  │  ├─ DependInfo.cmake
-│  │  │  ├─ flags.make
-│  │  │  ├─ includes_C.rsp
-│  │  │  ├─ link.txt
-│  │  │  ├─ linkLibs.rsp
-│  │  │  ├─ objects.a
-│  │  │  ├─ objects1.rsp
-│  │  │  └─ progress.make
-│  │  └─ TargetDirectories.txt
-│  ├─ cmake_install.cmake
-│  ├─ compile_commands.json
-│  ├─ config.h
-│  ├─ lib
-│  ├─ Makefile
-│  └─ src
-│     ├─ CMakeFiles
-│     │  ├─ CMakeDirectoryInformation.cmake
-│     │  ├─ item.dir
-│     │  │  ├─ build.make
-│     │  │  ├─ cmake_clean.cmake
-│     │  │  ├─ cmake_clean_target.cmake
-│     │  │  ├─ compiler_depend.internal
-│     │  │  ├─ compiler_depend.make
-│     │  │  ├─ compiler_depend.ts
-│     │  │  ├─ depend.make
-│     │  │  ├─ DependInfo.cmake
-│     │  │  ├─ flags.make
-│     │  │  ├─ item.c.obj
-│     │  │  ├─ item.c.obj.d
-│     │  │  ├─ link.txt
-│     │  │  └─ progress.make
-│     │  ├─ print.dir
-│     │  │  ├─ build.make
-│     │  │  ├─ cmake_clean.cmake
-│     │  │  ├─ cmake_clean_target.cmake
-│     │  │  ├─ compiler_depend.internal
-│     │  │  ├─ compiler_depend.make
-│     │  │  ├─ compiler_depend.ts
-│     │  │  ├─ depend.make
-│     │  │  ├─ DependInfo.cmake
-│     │  │  ├─ flags.make
-│     │  │  ├─ link.txt
-│     │  │  ├─ print.c.obj
-│     │  │  ├─ print.c.obj.d
-│     │  │  └─ progress.make
-│     │  └─ progress.marks
-│     ├─ cmake_install.cmake
-│     ├─ libprint.a
-│     └─ Makefile
-├─ cmake.md
-├─ CMakeLists.txt
-├─ config.h.in
-├─ include
-│  ├─ item.h
-│  ├─ list.h
-│  ├─ prehead.h
-│  ├─ print.h
-│  ├─ school.h
-│  └─ student.h
-├─ main.c
-└─ src
-   ├─ CMakeLists.txt
-   ├─ item.c
-   ├─ print.c
-   ├─ school.c
-   └─ student.c
+## 简介
 
-```
+本项目用于运动会计分系统的开发，实现对运动会各比赛项目、学校及成绩的录入、查询、修改与统计。系统采用命令行菜单交互，利用链表管理数据，支持数据的保存与校验。
+
+## 功能特性
+
+- 录入、修改和查询比赛项目信息
+- 录入、修改和查询学校信息
+- 录入及修改比赛成绩并自动计算得分
+- 基于 CMake 构建和多模块开发，便于扩展和维护
+- 数据校验机制确保数据文件安全性
+
+## 目录结构
+
+- **include/**：项目头文件及公共宏定义
+- **src/**：源代码实现，包括核心数据、打印、菜单、文件存取等模块
+
+## 编译与运行
+
+### 环境依赖
+
+- CMake (版本 3.10 及以上)
+- MinGW 或其他 C 语言编译器
+
+### 编译步骤
+
+1. 新建构建目录：
+
+   ```bash
+   mkdir build
+   ```
+2. 进入构建目录并配置项目：
+
+   ```bash
+   cd build
+   cmake ../
+   ```
+
+   如使用非默认 Generator，请使用如下命令：
+   ```bash
+   cmake -G "MinGW Makefiles" ../
+   ```
+3. 构建项目：
+
+   ```bash
+   cmake --build .
+   ```
+4. 运行程序：
+   编译完成后，在 `build/bin` 目录下运行 `Scorecalculation.exe`。
+
+## 数据配置
+
+- **config.h.in**：用于 CMake 配置生成项目所需的 `config.h` 文件
+- **data.ini**：数据存储文件，记录学校信息和比赛项目成绩。请注意修改后可能导致数据失效。
+
+## 使用说明
+
+运行程序后，系统将提供命令行菜单：
+
+- 主菜单用于选择信息查询、录入、修改和保存等操作
+- 根据提示输入对应选项编号完成操作
+- 修改数据后，记得保存以确保数据持久化
+
+## 注意事项
+
+- 修改 `data.ini` 文件可能导致数据校验失败，建议通过程序操作数据
+- 程序支持调试模式，在调试模式下会打印额外提示信息，有助于开发和测试
+
+## 版权与许可
+
+本项目代码仅供学习和研究使用，任何商业用途均需经过授权。如需分发，请保留原作者信息及版权声明。
+By LeonardoTan

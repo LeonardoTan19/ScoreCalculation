@@ -1,2 +1,0 @@
-E:\mingw64\bin\ar.exe qc ..\lib\libStore.a CMakeFiles/Store.dir/store.c.obj
-E:\mingw64\bin\ranlib.exe ..\lib\libStore.a
