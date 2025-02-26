@@ -70,7 +70,7 @@ void queryMenu()
                 SchoolList temp = SchoolList_Copy_Shallow(schools);
                 SchoolList_Sort(temp, cmp[sortMethod - 1]);
                 printSchools(temp);
-                SchoolList_Destroy(temp);
+                free(temp);
             }
             break;
         case 3:
