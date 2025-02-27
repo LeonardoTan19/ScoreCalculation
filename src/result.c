@@ -63,11 +63,11 @@ int stringToResult(ComType comType, char *str)
     }
     if (comType % 2)
     {
-        if (sscanf(str, "%dh%02d'%02d\"%02d", &hour, &minute, &second, &centisecond) == 4)
+        if (sscanf(str, "%dh%d'%d\"%d", &hour, &minute, &second, &centisecond) == 4)
             grade = hour * 1000000 + minute * 10000 + second * 100 + centisecond;
-        else if (sscanf(str, "%02d'%02d\"%02d", &minute, &second, &centisecond) == 3)
+        else if (sscanf(str, "%d'%d\"%d", &minute, &second, &centisecond) == 3)
             grade = minute * 10000 + second * 100 + centisecond;
-        else if (sscanf(str, "%02d\"%02d", &second, &centisecond) == 2)
+        else if (sscanf(str, "%d\"%d", &second, &centisecond) == 2)
             grade = second * 100 + centisecond;
         else
             grade = ERROR;

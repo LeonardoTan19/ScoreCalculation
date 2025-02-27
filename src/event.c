@@ -315,7 +315,7 @@ void printEventResult(const EventList events)
             print(getFunc(C_FAINT, F_BLUE, B_DEFAULT), "学校名称 成绩（得分）\n");
             print(getFunc(C_FAINT, F_BLUE, B_DEFAULT), "-------- --------\n");
             // 输出前三或前五的成绩
-            for (int i = 0; i < MIN(scoreTypeToNum(eventNode->data.comType), eventNode->data.results->size); i++)
+            for (int i = 0; i < MIN(scoreTypeToNum(eventNode->data.scoreType), eventNode->data.results->size); i++)
             {
                 if (resultNode)
                 {
