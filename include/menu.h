@@ -16,7 +16,7 @@ typedef void (*MenuPointer)();
 #ifdef _DEBUG
 #define printWelcome() print(getFunc(C_BOLD, F_BLUE, B_DEFAULT), "**正在调试**\n")
 #else
-#define printWelcome() print(getFunc(C_BOLD, F_RED, B_DEFAULT), "**欢迎使用运动会分数统计系统**\n")
+#define printWelcome() print(getFunc(C_BOLD, F_RED, B_DEFAULT), "**欢迎使用运动会分数统计系统 Version%d.%d**\n",PROJECT_VERSION_MAJOR,PROJECT_VERSION_MINOR)
 #endif
 
 // 主菜单
